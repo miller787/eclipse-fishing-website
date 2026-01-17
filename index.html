@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclipse Global Fishing Ltd | Premium European Fishing Tackle</title>
+    <meta name="description" content="Eclipse Global Fishing Ltd - UK registered manufacturer of premium fishing tackle. Carp reels, spinning reels, rods, lines and accessories. EU-wide distribution from Poland.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ========== CSS Variables ========== */
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --bg-card-hover: #22222e;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6b6b7b;
+            --accent: #ff6b35;
+            --accent-hover: #ff8555;
+            --accent-glow: rgba(255, 107, 53, 0.3);
+            --border: #2a2a3a;
+            --gradient-1: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            --gradient-2: linear-gradient(135deg, #0a0a0f 0%, #1a1a24 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 40px var(--accent-glow);
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        /* ========== Reset & Base ========== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition-fast);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ========== Utility Classes ========== */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: var(--shadow-md), var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), 0 0 60px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ========== Navigation ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all var(--transition-normal);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 26px;
+            height: 26px;
+            fill: white;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width var(--transition-normal);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all var(--transition-normal);
+        }
+
+        /* ========== Hero Section ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(255, 107, 53, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 40%),
+                radial-gradient(ellipse at 50% 0%, rgba(30, 30, 50, 0.8) 0%, transparent 60%);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 107, 53, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 53, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: patternMove 20s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-title span {
+            display: block;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: glowPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+        }
+
+        .hero-reel {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-reel svg {
+            width: 80%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.875rem;
+            box-shadow: var(--shadow-lg);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-badge.badge-1 {
+            top: 10%;
+            right: 0;
+            animation-delay: 0s;
+        }
+
+        .floating-badge.badge-2 {
+            bottom: 20%;
+            left: 0;
+            animation-delay: 1s;
+        }
+
+        .floating-badge.badge-3 {
+            bottom: 5%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .badge-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        /* ========== About Section ========== */
+        .about {
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .about-content h2 span {
+            color: var(--accent);
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            margin-bottom: 20px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .about-feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .about-feature-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent);
+        }
+
+        .about-feature h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .about-feature p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+        }
+
+        .company-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .company-info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+
+        .company-info-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .company-info-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        .company-info-text h4 {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .company-info-text p {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* ========== Products Section ========== */
+        .products {
+            position: relative;
+        }
+
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 12px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+        }
+
+        .product-image {
+            height: 200px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image svg {
+            width: 120px;
+            height: 120px;
+            opacity: 0.8;
+            transition: transform var(--transition-normal);
+        }
+
+        .product-card:hover .product-image svg {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 6px 12px;
+            background: var(--gradient-1);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .product-content {
+            padding: 24px;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .product-spec {
+            padding: 4px 10px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+        }
+
+        .product-description {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ========== Why Choose Us Section ========== */
+        .why-us {
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .why-us::before,
+        .why-us::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        .why-us::before { top: 0; }
+        .why-us::after { bottom: 0; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 107, 53, 0.3);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-normal);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--gradient-1);
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--accent);
+            transition: stroke var(--transition-normal);
+        }
+
+        .feature-card:hover .feature-icon svg {
+            stroke: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ========== Contact Section ========== */
+        .contact {
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .contact-info h2 span {
+            color: var(--accent);
+        }
+
+        .contact-info > p {
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--accent);
+        }
+
+        .contact-item-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-item-content p {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item-content a {
+            color: var(--accent);
+        }
+
+        .contact-item-content a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 14px 18px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: all var(--transition-fast);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            justify-content: center;
+            padding: 16px;
+            font-size: 1rem;
+        }
+
+        /* ========== Footer ========== */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            margin: 20px 0;
+            max-width: 300px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-normal);
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--text-secondary);
+            transition: fill var(--transition-normal);
+        }
+
+        .footer-social a:hover svg {
+            fill: white;
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-column a {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-legal a {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .footer-legal a:hover {
+            color: var(--text-primary);
+        }
+
+        /* ========== Mobile Navigation ========== */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary);
+            z-index: 999;
+            padding: 100px 24px 40px;
+            transform: translateX(100%);
+            transition: transform var(--transition-normal);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .mobile-menu-links a {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                order: 1;
+            }
+
+            .hero-visual {
+                order: 0;
+                margin-bottom: 40px;
+            }
+
+            .hero-description {
+                margin: 0 auto 40px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .hero-stat {
+                text-align: center;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+        }
+
+        /* ========== Scroll Animations ========== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Eclipse<span>Fishing</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-links">
+            <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="#products" onclick="closeMobileMenu()">Products</a></li>
+            <li><a href="#why-us" onclick="closeMobileMenu()">Why Us</a></li>
+            <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    UK Registered • EU Distribution
+                </div>
+                <h1 class="hero-title">
+                    Premium Fishing<br>
+                    <span>Tackle for Europe</span>
+                </h1>
+                <p class="hero-description">
+                    Eclipse Global Fishing Ltd brings you professional-grade reels, rods, and accessories.
+                    Engineered for performance, delivered across Europe from our Poland warehouse.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">
+                        Explore Products
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">50+</div>
+                        <div class="hero-stat-label">Products</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">EU</div>
+                        <div class="hero-stat-label">Wide Shipping</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">2yr</div>
+                        <div class="hero-stat-label">Warranty</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <div class="hero-glow"></div>
+                    <div class="hero-reel">
+                        <!-- Fishing Reel SVG -->
+                        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="reelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff6b35"/>
+                                    <stop offset="100%" style="stop-color:#f7931e"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Outer ring -->
+                            <circle cx="100" cy="100" r="85" stroke="url(#reelGradient)" stroke-width="4" fill="none"/>
+                            <circle cx="100" cy="100" r="75" stroke="#2a2a3a" stroke-width="2" fill="#1a1a24"/>
+                            <!-- Inner details -->
+                            <circle cx="100" cy="100" r="55" stroke="#3a3a4a" stroke-width="1" fill="#12121a"/>
+                            <circle cx="100" cy="100" r="35" stroke="url(#reelGradient)" stroke-width="3" fill="#0a0a0f"/>
+                            <circle cx="100" cy="100" r="15" fill="url(#reelGradient)"/>
+                            <!-- Spokes -->
+                            <line x1="100" y1="45" x2="100" y2="65" stroke="#3a3a4a" stroke-width="2"/>
+                            <line x1="100" y1="135" x2="100" y2="155" stroke="#3a3a4a" stroke-width="2"/>
+                            <line x1="45" y1="100" x2="65" y2="100" stroke="#3a3a4a" stroke-width="2"/>
+                            <line x1="135" y1="100" x2="155" y2="100" stroke="#3a3a4a" stroke-width="2"/>
+                            <!-- Handle -->
+                            <rect x="155" y="85" width="35" height="12" rx="4" fill="#2a2a3a"/>
+                            <circle cx="185" cy="91" r="10" fill="url(#reelGradient)"/>
+                            <!-- Drag knob -->
+                            <circle cx="100" cy="100" r="8" fill="#2a2a3a"/>
+                            <circle cx="100" cy="100" r="4" fill="#ff6b35"/>
+                        </svg>
+                    </div>
+                    <div class="floating-badge badge-1">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <span>Premium Quality</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM4 12h4v2H4v-2zm10 6H4v-2h10v2zm6 0h-4v-2h4v2zm0-4H10v-2h10v2z"/>
+                            </svg>
+                        </div>
+                        <span>Fast EU Shipping</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content animate-on-scroll">
+                    <h2>Dedicated to <span>Angling Excellence</span></h2>
+                    <p>
+                        Eclipse Global Fishing Ltd is a UK-registered company specializing in premium fishing tackle
+                        for the European market. From precision-engineered carp reels to high-performance braided lines,
+                        our products are designed for serious anglers who demand reliability and performance.
+                    </p>
+                    <p>
+                        With our centrally located warehouse in Poland, we ensure fast and efficient delivery across
+                        the European Union, bringing professional-grade fishing equipment directly to your doorstep.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>2-Year Warranty</h4>
+                                <p>Full coverage on all products</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>EU-Wide Shipping</h4>
+                                <p>Fast delivery from Poland</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Quality Tested</h4>
+                                <p>Rigorous quality control</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Expert Support</h4>
+                                <p>Dedicated customer service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual animate-on-scroll">
+                    <div class="about-card">
+                        <div class="company-info">
+                            <div class="company-info-item">
+                                <div class="company-info-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg>
+                                </div>
+                                <div class="company-info-text">
+                                    <h4>Headquarters</h4>
+                                    <p>United Kingdom</p>
+                                </div>
+                            </div>
+                            <div class="company-info-item">
+                                <div class="company-info-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                                    </svg>
+                                </div>
+                                <div class="company-info-text">
+                                    <h4>Warehouse</h4>
+                                    <p>Poland (EU Distribution)</p>
+                                </div>
+                            </div>
+                            <div class="company-info-item">
+                                <div class="company-info-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/>
+                                    </svg>
+                                </div>
+                                <div class="company-info-text">
+                                    <h4>Registration</h4>
+                                    <p>UK Limited Company</p>
+                                </div>
+                            </div>
+                            <div class="company-info-item">
+                                <div class="company-info-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
+                                <div class="company-info-text">
+                                    <h4>Market</h4>
+                                    <p>European Union</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products section" id="products">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-subtitle">Our Collection</span>
+                <h2 class="section-title">Premium Fishing Tackle</h2>
+                <p class="section-description">
+                    Discover our comprehensive range of professional-grade fishing equipment,
+                    engineered for performance and built to last.
+                </p>
+            </div>
+
+            <div class="product-categories animate-on-scroll">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="reels">Reels</button>
+                <button class="category-btn" data-category="rods">Rods</button>
+                <button class="category-btn" data-category="lines">Lines</button>
+                <button class="category-btn" data-category="accessories">Accessories</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Carp Reels -->
+                <div class="product-card" data-category="reels">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="50" stroke="#ff6b35" stroke-width="3" fill="#1a1a24"/>
+                            <circle cx="60" cy="60" r="35" stroke="#3a3a4a" stroke-width="2" fill="#12121a"/>
+                            <circle cx="60" cy="60" r="20" stroke="#ff6b35" stroke-width="2" fill="#0a0a0f"/>
+                            <circle cx="60" cy="60" r="8" fill="#ff6b35"/>
+                            <rect x="95" y="52" width="20" height="8" rx="2" fill="#3a3a4a"/>
+                            <circle cx="112" cy="56" r="6" fill="#ff6b35"/>
+                        </svg>
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Carp Reels</span>
+                        <h3 class="product-name">POWER CARP STX 8000</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">8000 Size</span>
+                            <span class="product-spec">Big Pit</span>
+                            <span class="product-spec">Long Cast</span>
+                        </div>
+                        <p class="product-description">High-capacity big pit reel designed for extreme long-distance casting. Perfect for serious carp anglers.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="reels">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="50" stroke="#ff6b35" stroke-width="3" fill="#1a1a24"/>
+                            <circle cx="60" cy="60" r="35" stroke="#3a3a4a" stroke-width="2" fill="#12121a"/>
+                            <circle cx="60" cy="60" r="20" stroke="#ff6b35" stroke-width="2" fill="#0a0a0f"/>
+                            <circle cx="60" cy="60" r="8" fill="#ff6b35"/>
+                            <rect x="95" y="52" width="20" height="8" rx="2" fill="#3a3a4a"/>
+                            <circle cx="112" cy="56" r="6" fill="#ff6b35"/>
+                        </svg>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Carp Reels</span>
+                        <h3 class="product-name">POWER CARP RDX 7000</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">7000 Size</span>
+                            <span class="product-spec">Rear Drag</span>
+                            <span class="product-spec">Free Spool</span>
+                        </div>
+                        <p class="product-description">Versatile carp reel with smooth rear drag system and reliable free spool mechanism.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="reels">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="50" stroke="#ff6b35" stroke-width="3" fill="#1a1a24"/>
+                            <circle cx="60" cy="60" r="35" stroke="#3a3a4a" stroke-width="2" fill="#12121a"/>
+                            <circle cx="60" cy="60" r="20" stroke="#ff6b35" stroke-width="2" fill="#0a0a0f"/>
+                            <circle cx="60" cy="60" r="8" fill="#ff6b35"/>
+                            <rect x="95" y="52" width="20" height="8" rx="2" fill="#3a3a4a"/>
+                            <circle cx="112" cy="56" r="6" fill="#ff6b35"/>
+                        </svg>
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Carp Reels</span>
+                        <h3 class="product-name">J-3FR Series</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">4000/5000/6000</span>
+                            <span class="product-spec">Front Drag</span>
+                        </div>
+                        <p class="product-description">Compact yet powerful front drag series available in multiple sizes for various fishing conditions.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="reels">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="50" stroke="#ff6b35" stroke-width="3" fill="#1a1a24"/>
+                            <circle cx="60" cy="60" r="35" stroke="#3a3a4a" stroke-width="2" fill="#12121a"/>
+                            <circle cx="60" cy="60" r="20" stroke="#ff6b35" stroke-width="2" fill="#0a0a0f"/>
+                            <circle cx="60" cy="60" r="8" fill="#ff6b35"/>
+                            <rect x="95" y="52" width="20" height="8" rx="2" fill="#3a3a4a"/>
+                            <circle cx="112" cy="56" r="6" fill="#ff6b35"/>
+                        </svg>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Carp Reels</span>
+                        <h3 class="product-name">EOS / CARP MAX / BLACK CARP</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">5000/6000</span>
+                            <span class="product-spec">Multi-Disc Drag</span>
+                        </div>
+                        <p class="product-description">Entry to mid-range carp reels offering excellent value and reliable performance for all skill levels.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="reels">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="45" stroke="#ff6b35" stroke-width="3" fill="#1a1a24"/>
+                            <circle cx="60" cy="60" r="30" stroke="#3a3a4a" stroke-width="2" fill="#12121a"/>
+                            <circle cx="60" cy="60" r="15" stroke="#ff6b35" stroke-width="2" fill="#0a0a0f"/>
+                            <circle cx="60" cy="60" r="6" fill="#ff6b35"/>
+                            <rect x="92" y="54" width="18" height="6" rx="2" fill="#3a3a4a"/>
+                            <circle cx="107" cy="57" r="5" fill="#ff6b35"/>
+                        </svg>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Feeder Reels</span>
+                        <h3 class="product-name">HORIZON / STRATUS 5000</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">5000 Size</span>
+                            <span class="product-spec">Quick Drag</span>
+                            <span class="product-spec">Lightweight</span>
+                        </div>
+                        <p class="product-description">Precision feeder reels with ultra-smooth drag systems designed for technical feeder fishing.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="reels">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="40" stroke="#ff6b35" stroke-width="3" fill="#1a1a24"/>
+                            <circle cx="60" cy="60" r="28" stroke="#3a3a4a" stroke-width="2" fill="#12121a"/>
+                            <circle cx="60" cy="60" r="15" stroke="#ff6b35" stroke-width="2" fill="#0a0a0f"/>
+                            <circle cx="60" cy="60" r="6" fill="#ff6b35"/>
+                            <rect x="88" y="55" width="16" height="5" rx="2" fill="#3a3a4a"/>
+                            <circle cx="101" cy="57.5" r="4" fill="#ff6b35"/>
+                        </svg>
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Spinning Reels</span>
+                        <h3 class="product-name">STYLUS Series & GTM 40R</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">2000-4000</span>
+                            <span class="product-spec">Graphite Body</span>
+                            <span class="product-spec">Anti-Reverse</span>
+                        </div>
+                        <p class="product-description">Lightweight spinning reels perfect for lure fishing, perch, and pike. Exceptional sensitivity and balance.</p>
+                    </div>
+                </div>
+
+                <!-- Rods -->
+                <div class="product-card" data-category="rods">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <line x1="10" y1="100" x2="110" y2="20" stroke="#ff6b35" stroke-width="4" stroke-linecap="round"/>
+                            <line x1="10" y1="100" x2="110" y2="20" stroke="#3a3a4a" stroke-width="8" stroke-linecap="round" stroke-dasharray="0 15"/>
+                            <circle cx="15" cy="95" r="8" fill="#ff6b35"/>
+                            <circle cx="15" cy="95" r="4" fill="#1a1a24"/>
+                        </svg>
+                        <span class="product-badge">Premium</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Carp Rods</span>
+                        <h3 class="product-name">Phantom Carp</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">3.6m / 3.9m</span>
+                            <span class="product-spec">3.5 Lb Test</span>
+                            <span class="product-spec">Carbon</span>
+                        </div>
+                        <p class="product-description">High-modulus carbon carp rod with progressive action. Ideal for long-range casting and big fish battles.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="rods">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <line x1="10" y1="100" x2="110" y2="20" stroke="#ff6b35" stroke-width="4" stroke-linecap="round"/>
+                            <line x1="10" y1="100" x2="110" y2="20" stroke="#3a3a4a" stroke-width="8" stroke-linecap="round" stroke-dasharray="0 15"/>
+                            <circle cx="15" cy="95" r="8" fill="#ff6b35"/>
+                            <circle cx="15" cy="95" r="4" fill="#1a1a24"/>
+                        </svg>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Carp Rods</span>
+                        <h3 class="product-name">Avalon Carp</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">3.6m / 3.9m</span>
+                            <span class="product-spec">3.5 Lb Test</span>
+                            <span class="product-spec">Value</span>
+                        </div>
+                        <p class="product-description">Reliable carp rod offering excellent performance at an accessible price point. Great for beginners and experienced anglers.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="rods">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <line x1="10" y1="100" x2="110" y2="20" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="10" y1="100" x2="110" y2="20" stroke="#3a3a4a" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 12"/>
+                            <circle cx="15" cy="95" r="6" fill="#ff6b35"/>
+                            <circle cx="15" cy="95" r="3" fill="#1a1a24"/>
+                        </svg>
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Spinning Rods</span>
+                        <h3 class="product-name">Balance Evolution Series</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">Multiple Lengths</span>
+                            <span class="product-spec">Various Actions</span>
+                            <span class="product-spec">Sensitive</span>
+                        </div>
+                        <p class="product-description">Versatile spinning rod series covering all techniques from finesse to power fishing. Exceptional balance and sensitivity.</p>
+                    </div>
+                </div>
+
+                <!-- Lines -->
+                <div class="product-card" data-category="lines">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="45" stroke="#3a3a4a" stroke-width="2" fill="none"/>
+                            <circle cx="60" cy="60" r="35" stroke="#ff6b35" stroke-width="15" fill="none"/>
+                            <circle cx="60" cy="60" r="20" stroke="#3a3a4a" stroke-width="2" fill="#1a1a24"/>
+                        </svg>
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Monofilament</span>
+                        <h3 class="product-name">INVISIBLE 3D</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">Chameleon</span>
+                            <span class="product-spec">100m / 1000m</span>
+                            <span class="product-spec">Low Vis</span>
+                        </div>
+                        <p class="product-description">Revolutionary chameleon-colored monofilament that adapts to water conditions. Virtually invisible to fish.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="lines">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="45" stroke="#3a3a4a" stroke-width="2" fill="none"/>
+                            <circle cx="60" cy="60" r="35" stroke="#8ec8ff" stroke-width="15" fill="none"/>
+                            <circle cx="60" cy="60" r="20" stroke="#3a3a4a" stroke-width="2" fill="#1a1a24"/>
+                        </svg>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Monofilament</span>
+                        <h3 class="product-name">INFINITY Premium Clear</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">Crystal Clear</span>
+                            <span class="product-spec">High Abrasion</span>
+                            <span class="product-spec">Premium</span>
+                        </div>
+                        <p class="product-description">Premium clear monofilament with exceptional knot strength and abrasion resistance for demanding conditions.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="lines">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="45" stroke="#3a3a4a" stroke-width="2" fill="none"/>
+                            <circle cx="60" cy="60" r="35" stroke="#22c55e" stroke-width="15" fill="none" stroke-dasharray="4 2"/>
+                            <circle cx="60" cy="60" r="20" stroke="#3a3a4a" stroke-width="2" fill="#1a1a24"/>
+                        </svg>
+                        <span class="product-badge">8-Strand</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Braided Line</span>
+                        <h3 class="product-name">X8 Super Braid Light Green</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">8 Strand</span>
+                            <span class="product-spec">Ultra Smooth</span>
+                            <span class="product-spec">Zero Stretch</span>
+                        </div>
+                        <p class="product-description">Premium 8-strand braid offering exceptional casting distance and sensitivity. Perfect for lure and feeder fishing.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="lines">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="45" stroke="#3a3a4a" stroke-width="2" fill="none"/>
+                            <circle cx="60" cy="60" r="35" stroke="#ff6b35" stroke-width="15" fill="none" stroke-dasharray="4 2"/>
+                            <circle cx="60" cy="60" r="20" stroke="#3a3a4a" stroke-width="2" fill="#1a1a24"/>
+                        </svg>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Braided Line</span>
+                        <h3 class="product-name">X4 F-1 PE Orange</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">4 Strand</span>
+                            <span class="product-spec">High Vis Orange</span>
+                            <span class="product-spec">Value</span>
+                        </div>
+                        <p class="product-description">Reliable 4-strand braid in high-visibility orange. Excellent value for everyday fishing applications.</p>
+                    </div>
+                </div>
+
+                <!-- Accessories -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <rect x="15" y="45" width="90" height="30" rx="6" fill="#1a1a24" stroke="#ff6b35" stroke-width="2"/>
+                            <rect x="10" y="40" width="100" height="40" rx="8" fill="none" stroke="#3a3a4a" stroke-width="2"/>
+                            <line x1="30" y1="50" x2="30" y2="70" stroke="#3a3a4a" stroke-width="2"/>
+                            <line x1="90" y1="50" x2="90" y2="70" stroke="#3a3a4a" stroke-width="2"/>
+                            <rect x="5" y="55" width="10" height="10" rx="2" fill="#ff6b35"/>
+                            <rect x="105" y="55" width="10" height="10" rx="2" fill="#ff6b35"/>
+                        </svg>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Rod Cases</span>
+                        <h3 class="product-name">Rod Tubes & Cases</h3>
+                        <div class="product-specs">
+                            <span class="product-spec">1.0m - 1.5m</span>
+                            <span class="product-spec">Camo/Green/Grey</span>
+                            <span class="product-spec">Padded</span>
+                        </div>
+                        <p class="product-description">Protective rod cases and tubes in various sizes and colors. Durable construction with comfortable carry straps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us section" id="why-us">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-subtitle">Why Eclipse Fishing</span>
+                <h2 class="section-title">Built for Anglers, By Anglers</h2>
+                <p class="section-description">
+                    We understand what serious fishermen need. That's why every product
+                    in our range is designed with performance and reliability in mind.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Every product undergoes rigorous quality testing to ensure durability and performance in all conditions.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="3" width="22" height="18" rx="2" ry="2"/>
+                            <line x1="1" y1="9" x2="23" y2="9"/>
+                            <path d="M8 15h2M16 15h2"/>
+                        </svg>
+                    </div>
+                    <h3>2-Year Warranty</h3>
+                    <p>Complete peace of mind with our comprehensive warranty covering manufacturing defects and materials.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>EU-Wide Shipping</h3>
+                    <p>Fast and reliable delivery across the European Union from our strategically located Poland warehouse.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Expert Support</h3>
+                    <p>Our knowledgeable team of fishing enthusiasts is always ready to help with product questions and advice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <h2>Let's <span>Connect</span></h2>
+                    <p>Have questions about our products or interested in becoming a distributor? Get in touch with our team.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@eclipsefishing.com">info@eclipsefishing.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Headquarters</h4>
+                                <p>United Kingdom</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="1" y="3" width="22" height="18" rx="2" ry="2"/>
+                                    <line x1="1" y1="9" x2="23" y2="9"/>
+                                </svg>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Warehouse</h4>
+                                <p>Poland (EU Distribution Center)</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Business Hours</h4>
+                                <p>Mon - Fri: 9:00 - 17:00 CET</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container animate-on-scroll">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company (Optional)</label>
+                                <input type="text" id="company" name="company" placeholder="Your company name">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="products">Product Inquiry</option>
+                                    <option value="wholesale">Wholesale / Distribution</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Send Message
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Eclipse<span>Fishing</span></span>
+                    </a>
+                    <p>Premium fishing tackle for European anglers. Quality equipment designed for serious fishermen.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#products">Carp Reels</a></li>
+                        <li><a href="#products">Spinning Reels</a></li>
+                        <li><a href="#products">Fishing Rods</a></li>
+                        <li><a href="#products">Lines</a></li>
+                        <li><a href="#products">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Distributors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Warranty Info</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Eclipse Global Fishing Ltd. All rights reserved. UK Registered Company.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== Navbar Scroll Effect ==========
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // ========== Mobile Menu ==========
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // ========== Product Category Filter ==========
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+
+                // Filter products with animation
+                productCards.forEach((card, index) => {
+                    const cardCategory = card.dataset.category;
+
+                    if (category === 'all' || cardCategory === category) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 50);
+                    } else {
+                        card.classList.remove('visible');
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // ========== Scroll Animations ==========
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+
+                    // For product cards, add visible class
+                    if (entry.target.classList.contains('product-card')) {
+                        entry.target.classList.add('visible');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Observe product cards
+        productCards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // ========== Smooth Scroll for Anchor Links ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ========== Contact Form ==========
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+
+            // Here you would typically send the data to a server
+            console.log('Form submitted:', data);
+
+            // Show success message (in production, replace with actual submission)
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // ========== Initial Animation Trigger ==========
+        window.addEventListener('load', () => {
+            // Trigger animations for elements in view on page load
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('animated');
+                }
+            });
+
+            // Show product cards initially visible
+            productCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('visible');
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
